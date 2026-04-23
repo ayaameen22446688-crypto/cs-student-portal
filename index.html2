@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS Student Portal</title>
+
+<style>
+body{
+font-family: Arial;
+background:#f0f4f8;
+text-align:center;
+padding:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+width:400px;
+margin:auto;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:10px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+button{
+background:#007bff;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+#result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+color:green;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>CS Student Portal</h2>
+
+<input type="text" id="name" placeholder="Enter Student Name">
+
+<select id="stage">
+<option>First Stage</option>
+<option>Second Stage</option>
+<option>Third Stage</option>
+<option>Fourth Stage</option>
+</select>
+
+<input type="number" id="grade" placeholder="Enter Average Grade">
+
+<button onclick="calculate()">Calculate GPA</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+function calculate(){
+
+let name=document.getElementById("name").value;
+let grade=parseFloat(document.getElementById("grade").value);
+
+let gpa=(grade/25).toFixed(2);
+
+document.getElementById("result").innerHTML=
+"Student: "+name+"<br> GPA = "+gpa;
+
+}
+</script>
+
+</body>
+</html>
